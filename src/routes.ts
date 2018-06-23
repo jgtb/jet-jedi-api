@@ -1,21 +1,27 @@
-import { Application } from 'express';
+import { Application } from 'express'
 
-import UsersRoutes from './modules/users/routes/index';
+import UsersRoutes from './modules/users/routes/index'
 
-const urlBase = '/api/v1';
+const ROUTES: any = [
+  {
+    component: UsersRoutes,
+    module: 'users'
+  }
+]
+
+const urlBase = '/api/v1/'
 
 const allRoutes = (server: Application) => {
-  server.use(`${urlBase}/users`, UsersRoutes);
+  ROUTES.forEach((route: any) => server.use(`${urlBase}${route.module}`, route.component))
 
-  // Default route errorhandler
-  server.use(function(req, res, next) {
+  server.use((req, res, next) => {
     res.status(500).json({
       status: 500,
-      msg: `Error on route. This route exist?`,
+      message: `Invalid Route`,
       route: req.originalUrl
-    });
-    next();
-  });
-};
+    })
+    next()
+  })
+}
 
-export default allRoutes;
+export default allRoutes

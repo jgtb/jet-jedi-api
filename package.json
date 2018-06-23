@@ -1,14 +1,9 @@
 {
-  "name": "nodejs-ts",
+  "name": "node-js-api",
   "version": "2.0.0",
-  "description": "A simple boilerplate for NodeJS using Typescript projects",
+  "description": "Node JS API",
   "main": "index.js",
   "license": "MIT",
-  "author": {
-    "name": "Emerson Luiz",
-    "email": "eluizbr@gmail.com",
-    "url": "https://github.com/eluizbr"
-  },
   "engines": {
     "node": "^9.5.0",
     "npm": "5.6.0"

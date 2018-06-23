@@ -1,14 +1,11 @@
-import { Request, Response } from 'express';
+import { Request, Response } from 'express'
 
-import { mongoUniqueErrorHandler } from '../../../libs/mongoUniqueErrorHandler';
-import { IUser } from '../helpers/user.interface';
-import UserSchema from '../models/user-models';
+import UserSchema from '../models/users-schema'
 
-export const createUser = async (req: Request, res: Response) => {
-  const newUser = await new UserSchema(req.body);
+const createUser = async (req: Request, res: Response) => {
+  const payload = req.body
+  const user: any = await new UserSchema(payload).save()
+  res.status(200).json(user)
+}
 
-  newUser
-    .save()
-    .then((user: IUser) => res.status(201).json(user))
-    .catch((err: any) => res.status(409).json(mongoUniqueErrorHandler(err)));
-};
+export default createUser

@@ -1,17 +1,18 @@
-import * as express from 'express';
+import { Router } from 'express'
 
-import { removeUser } from './user-delete';
-import { getUserById } from './user-get-ById';
-import { updateUser } from './user-patch';
-import { getAllUsers } from './users-get';
-import { createUser } from './users-post';
+import getAllUsers from './users-get'
+import getUserById from './users-get-by-id'
+import createUser from './users-post'
+import updateUser from './users-patch'
+import deleteUser from './users-delete'
 
-const UsersRoutes = express.Router();
+const UsersRoutes = Router()
 
-UsersRoutes.get('/', getAllUsers)
+UsersRoutes
+  .get('/', getAllUsers)
   .get('/:id', getUserById)
   .post('/', createUser)
   .patch('/:id', updateUser)
-  .delete('/:id', removeUser);
+  .delete('/:id', deleteUser)
 
-export default UsersRoutes;
+export default UsersRoutes

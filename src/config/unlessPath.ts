@@ -4,4 +4,4 @@ export const unlessPath = {
     { url: '/doc', methods: ['GET'] },
     { url: '/app', methods: ['GET', 'POST', 'PATCH', 'DELETE'] },
   ],
-};
+}
