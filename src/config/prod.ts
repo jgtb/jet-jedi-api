@@ -1,4 +1,4 @@
 export = {
-  mongoDB: 'mongodb://localhost:27017/boilerplate',
+  mongoDB: 'mongodb://localhost:27017/jet-jedi',
   jwtSecret: '9999999999999999'
 }

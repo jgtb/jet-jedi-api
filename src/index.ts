@@ -25,7 +25,7 @@ server.use(cors())
 
 server.use(compression())
 
-server.use(session({ secret: config.jwtSecret, resave: true, saveUninitialized: true })))
+server.use(session({ secret: config.jwtSecret, resave: true, saveUninitialized: true }))
 
 server.use(passport.initialize())
 server.use(passport.session())

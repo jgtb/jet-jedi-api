@@ -1,11 +1,21 @@
 import { Application } from 'express'
 
-import UsersRoutes from './modules/users/routes/index'
+import JedisRoutes from './modules/jedis/routes/index'
+import ReportsRoutes from './modules/reports/routes/index'
+import StatuesRoutes from './modules/statues/routes/index'
 
 const ROUTES: any = [
   {
-    component: UsersRoutes,
-    module: 'users'
+    component: JedisRoutes,
+    module: 'jedis'
+  },
+  {
+    component: ReportsRoutes,
+    module: 'reports'
+  },
+  {
+    component: StatuesRoutes,
+    module: 'statues'
   }
 ]
 
