@@ -9,7 +9,7 @@
     "npm": "5.6.0"
   },
   "scripts": {
-    "heroku-prebuild": "npm install --only=dev && node_modules/.bin/tsc -p . && npm run makeDevDoc",
+    "heroku-prebuild": "npm install --only=dev && node_modules/.bin/tsc -p .",
     "dev": "export NODE_ENV='devel' && nodemon --exec ts-node src/index.ts",
     "prod": "export NODE_ENV='production' && nodemon --exec ts-node src/index.ts",
     "build": "tsc -p . && apidoc -i src -o build/public/doc",
