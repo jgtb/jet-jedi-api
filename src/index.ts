@@ -8,7 +8,6 @@ import * as jwt from 'express-jwt'
 import * as session from 'express-session'
 import * as helmet from 'helmet'
 import * as mongoose from 'mongoose'
-import * as passport from 'passport'
 
 import { unlessPath } from './config/unlessPath'
 import allRoutes from './routes'
@@ -26,9 +25,6 @@ server.use(cors())
 server.use(compression())
 
 server.use(session({ secret: config.jwtSecret, resave: true, saveUninitialized: true }))
-
-server.use(passport.initialize())
-server.use(passport.session())
 
 server.use(helmet());
 
