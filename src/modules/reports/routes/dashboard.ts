@@ -8,7 +8,7 @@ import responseHandler from '../../../helpers/responseHandler'
 
 const getDashboardReport = async (req: Request, res: Response) => {
   try {
-    const jedis: any = await JedisSchema.find({})
+    const jedis: any = await JedisSchema.find({ isActive: true })
     const response = {
       statues: chartsData(jedis, 'status'),
       planets: chartsData(jedis, 'planet')
