@@ -1,10 +1,10 @@
 ## Backend:
-###### Link do Código: [link](https://github.com/jgtb/jet-jedi-api)
-###### Link em Ambiente de Produção: [link](https://jet-jedi-api.herokuapp.com/api/v1/)
+##### Link do Código: [link](https://github.com/jgtb/jet-jedi-api)
+##### Link em Ambiente de Produção: [link](https://jet-jedi-api.herokuapp.com/api/v1/)
 
-Routes:
+### Routes:
 
-* (GET) => Get all Jedis *Pagination & Filters (query params: page, limit, name, planet, master, status)
+* jedis (GET) => Get all Jedis *Pagination & Filters (query params: page, limit, name, planet, master, status)
 * jedis/:id (GET) => Get Jedi By Id
 * jedis (POST) => Create Jedi
 * jedis/:id (PATCH) => Update Jedi
