@@ -1,7 +1,6 @@
 const statues: any = [
   'Pandawan',
-  'Jedi Master',
-  'Others...'
+  'Jedi Master'
 ]
 
 export {
